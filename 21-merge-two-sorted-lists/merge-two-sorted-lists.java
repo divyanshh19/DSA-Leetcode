@@ -63,9 +63,10 @@ class Solution {
             temp = t1;
             t1 = t1.next;
         }
-        else{
+        else if(t2 != null){
             temp.next = t2;
             temp = t2;
+            t2 = t2.next;
         }
         return dummyNode.next;
     }
