@@ -22,7 +22,7 @@ class Solution {
         Stack<Character> st = new Stack<>();
         for(char t : s.toCharArray()){
             if(t == '(' || t == '[' || t == '{'){
-                st.push(t);
+                st.push(t);  //sare opening bracket stack mein
             }
             else{
                 if(st.isEmpty()){
@@ -30,13 +30,13 @@ class Solution {
                 }
                 char top = st.peek();
                 if(t == ')' && top == '(' || t == ']' && top == '[' || t == '}' && top == '{'){
-                    st.pop();
+                    st.pop(); //compare bracket with stack bracket is same then pop it
                 }
                 else {
                     return false;
                 }
             }
         }
-        return st.isEmpty();
+        return st.isEmpty(); //if stack is empty it's true
     }
 }
