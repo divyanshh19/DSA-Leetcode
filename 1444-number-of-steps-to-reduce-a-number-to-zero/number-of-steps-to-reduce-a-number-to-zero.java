@@ -18,7 +18,7 @@ class Solution {
         // return steps;
 
         //recursion approach
-            return helper(num , 0);
+            return helper(num , 0);  //initialize steps 0
     }
     public static int helper(int num , int steps){
         if(num == 0){
