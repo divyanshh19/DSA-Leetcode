@@ -42,9 +42,9 @@ class Solution {
     //using the two pointer apporoach by storing the elements in dummyNode 
 
         ListNode dummyNode = new ListNode(-1);
+        ListNode temp = dummyNode;
         ListNode t1 = list1;
         ListNode t2 = list2;
-        ListNode temp = dummyNode;
 
         while(t1 != null && t2 != null){
             if(t1.val < t2.val){
@@ -56,14 +56,14 @@ class Solution {
                 temp.next = t2;
                 temp = t2;
                 t2 = t2.next;
-            }
+            }   
         }
         if(t1 != null){
             temp.next = t1;
             temp = t1;
             t1 = t1.next;
         }
-        else if(t2 != null){
+        if(t2 != null){
             temp.next = t2;
             temp = t2;
             t2 = t2.next;
