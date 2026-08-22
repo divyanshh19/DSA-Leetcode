@@ -7,23 +7,23 @@ class Solution {
         reverse(nums , k ,n - 1);
     }
     public void reverse(int[] nums, int left , int right){
-        // while(left <= right){
-        //     int temp = nums[left];
-        //     nums[left] = nums[right];
-        //     nums[right] = temp;
-        //     left++;
-        //     right--;
-        // }
+        while(left <= right){
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+            left++;
+            right--;
+        }
         //or using recursion
 
-        if(left > right){
-            return;
-        }
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
+        // if(left > right){
+        //     return;
+        // }
+        // int temp = nums[left];
+        // nums[left] = nums[right];
+        // nums[right] = temp;
 
-        reverse(nums ,left+1 , right - 1);
+        // reverse(nums ,left+1 , right - 1);
 
     }
 }
