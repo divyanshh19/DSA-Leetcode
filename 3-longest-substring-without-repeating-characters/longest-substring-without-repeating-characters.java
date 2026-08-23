@@ -51,8 +51,9 @@ class Solution {
         // }
         // return maxLen;
         int left = 0;
-        int maxLen = 0;
         int right = 0;
+        int maxLen = 0;
+
         HashSet<Character> window = new HashSet<>();
         for(right = 0;right < s.length();right++){
             while(window.contains(s.charAt(right))){
