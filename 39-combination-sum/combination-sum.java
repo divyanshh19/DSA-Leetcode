@@ -7,6 +7,7 @@ class Solution {
     }
     private void findComb(int index , int[] candidates , int target , List<List<Integer>> ans,ArrayList<Integer> ds)
     {
+        //BAse case
         if(index == candidates.length){
             if(target == 0){
                 ans.add(new ArrayList<>(ds));
