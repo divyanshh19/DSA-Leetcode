@@ -14,10 +14,14 @@ class Solution {
             return;
         }
         if(candidates[index] <= target){
+            //take element in to ds
             ds.add(candidates[index]);
+            //index stays same as can reuse it
             findComb(index , candidates, target - candidates[index], ans , ds);
+            //backtrack 
             ds.remove(ds.size() - 1);
         }
+        //don't take element
         findComb(index + 1, candidates , target , ans , ds);
     }
 }
