@@ -41,10 +41,15 @@ class Solution {
 
         for(int i = 0; i < nums.length;i++){
             if(!freq[i]){
+                //first make the true in boolean array for adding an element
                 freq[i] = true;
+                //add the element
                 ds.add(nums[i]);
+                //explore the others
                 recurPermute(nums , ds , ans, freq);
+                //backtrack
                 ds.remove(ds.size() - 1);
+                //make the false in boolean array for current element
                 freq[i] = false;
             }
         }
