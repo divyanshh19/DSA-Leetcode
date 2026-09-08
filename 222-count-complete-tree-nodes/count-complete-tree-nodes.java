@@ -21,7 +21,7 @@ class Solution {
         int leftNode = leftCount(root);
         int rightNode = rightCount(root);
         if(leftNode == rightNode){      //for perfect BT
-            return (1 << leftNode) - 1;
+            return (1 << leftNode) - 1;   //left shift 2^leftNode - 1
         }
         return 1 + countNodes(root.left) + countNodes(root.right);    //if not perfect Binary Tree
     }
