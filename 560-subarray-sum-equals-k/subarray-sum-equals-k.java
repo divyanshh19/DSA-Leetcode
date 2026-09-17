@@ -15,19 +15,23 @@ class Solution {
         // return count;
 
         //optimal approach --
-        HashMap<Integer,Integer> prefixCounter = new HashMap<>();
-        prefixCounter.put(0 , 1);
-        int count = 0;
-        int prefixSum = 0;
-        for(int n : nums){
-            prefixSum += n;
-            int reqSum = prefixSum - k;
-            if(prefixCounter.containsKey(reqSum)){
-                count += prefixCounter.get(reqSum);
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0 , 1);
+        int prefSum = 0;
+        int cnt = 0;
+        int n = nums.length;
+        int i = 0;
+
+        for(i = 0;i < n;i++){
+            prefSum += nums[i];
+            int remove = prefSum - k;
+
+            if(map.containsKey(remove)){
+                cnt = cnt + map.get(remove);
             }
-            prefixCounter.put(prefixSum , prefixCounter.getOrDefault(prefixSum ,0) +1);
+            map.put(prefSum , map.getOrDefault(prefSum, 0) + 1);
         }
-        return count;
+        return cnt;
 
         //Optimal solution -- only when non negative numbers are present
         // int n = nums.length;
