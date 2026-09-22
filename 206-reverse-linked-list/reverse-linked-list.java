@@ -24,15 +24,15 @@ class Solution {
 
         //Recursive approach --
 
+        
         if(head == null || head.next == null){
             return head;
         }
-        ListNode newHead = reverseList(head.next);
+        ListNode newNode = reverseList(head.next);
 
         ListNode front = head.next;
-        front.next = head;
+        front.next = head;;
         head.next = null;
-
-        return newHead;
+        return newNode;
     }
 }
