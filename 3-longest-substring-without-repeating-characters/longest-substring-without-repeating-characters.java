@@ -54,13 +54,13 @@ class Solution {
         int right = 0;
         int maxLen = 0;
 
-        HashSet<Character> window = new HashSet<>();
+        HashSet<Character> windw = new HashSet<>();
         for(right = 0;right < s.length();right++){
-            while(window.contains(s.charAt(right))){
-                window.remove(s.charAt(left));
+            while(windw.contains(s.charAt(right))){
+                windw.remove(s.charAt(left));
                 left++;
             }
-            window.add(s.charAt(right));
+            windw.add(s.charAt(right));
             maxLen = Math.max(maxLen , right - left + 1);
         }
         return maxLen;
