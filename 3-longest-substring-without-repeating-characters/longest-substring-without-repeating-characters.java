@@ -34,35 +34,21 @@ class Solution {
         
         // return maxLen;
 
-        // int left = 0;
-        // int maxLen = 0;
-
-        // HashSet<Character> freq = new HashSet<>();
-
-        // for(int right = 0; right < s.length();right++){
-        //      char c = s.charAt(right);
-
-        //     while(freq.contains(c)){
-        //         freq.remove(s.charAt(left));
-        //         left++;
-        //     }
-        //     freq.add(c);
-        //     maxLen = Math.max(maxLen , right - left + 1);
-        // }
-        // return maxLen;
+        HashSet<Character> set = new HashSet<>();
+        
         int left = 0;
-        int right = 0;
-        int maxLen = 0;
+        int maxLength = 0;
 
-        HashSet<Character> windw = new HashSet<>();
-        for(right = 0;right < s.length();right++){
-            while(windw.contains(s.charAt(right))){
-                windw.remove(s.charAt(left));
+        for(int right = 0;right < s.length();right++){
+            char ch = s.charAt(right);
+
+            while(set.contains(ch)){
+                set.remove(s.charAt(left));
                 left++;
             }
-            windw.add(s.charAt(right));
-            maxLen = Math.max(maxLen , right - left + 1);
+            set.add(ch);
+            maxLength = Math.max(maxLength , right - left + 1);
         }
-        return maxLen;
+        return maxLength;
     }
 }
