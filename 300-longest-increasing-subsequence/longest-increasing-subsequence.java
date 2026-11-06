@@ -1,32 +1,27 @@
 class Solution {
     public int lengthOfLIS(int[] nums) {
-
         int[] tails = new int[nums.length];
         int size = 0;
 
-        for (int num : nums) {
-
+        for(int num : nums){
             int left = 0;
             int right = size;
+            
+            while(left < right){
+                int mid = left + (right - left)/2;
 
-            while (left < right) {
-
-                int mid = left + (right - left) / 2;
-
-                if (tails[mid] < num) {
+                if(num > tails[mid]){
                     left = mid + 1;
-                } else {
+                }
+                else{
                     right = mid;
                 }
             }
-
             tails[left] = num;
-
-            if (left == size) {
+            if(left == size){
                 size++;
             }
         }
-
         return size;
     }
 }
