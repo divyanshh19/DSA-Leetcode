@@ -33,7 +33,7 @@ class Solution {
                 if(nums[left] <= nums[right]){
                     return nums[left];
                 }
-                if(nums[mid] >= nums[left]){
+                if(nums[mid] >= nums[right]){
                     left = mid + 1;
                 }
                 else{
