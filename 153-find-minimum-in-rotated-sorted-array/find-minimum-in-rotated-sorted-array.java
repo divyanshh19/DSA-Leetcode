@@ -37,7 +37,7 @@ class Solution {
                     left = mid + 1;
                 }
                 else{
-                    right = mid;
+                    right = mid; //not mid - 1 because mid itself could be a minimum elememt                
                 }
             }
             return nums[left];
