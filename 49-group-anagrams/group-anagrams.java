@@ -23,15 +23,15 @@ class Solution {
         //IInd method less optimal due to s.c = O(nm)
         //using the sorting characters and hashmap
 
-        HashMap<String , List<String>> map = new HashMap<>();
+        HashMap<String ,List<String>> map = new HashMap<>();
 
-        for(String s : strs){
-            char[] ch = s.toCharArray();
+        for(String st : strs){
+            char[] ch = st.toCharArray();
             Arrays.sort(ch);
-            
+
             String key = new String(ch);
-            map.putIfAbsent(key , new ArrayList<>());
-            map.get(key.toString()).add(s);
+            map.putIfAbsent(key ,new ArrayList<>());
+            map.get(key).add(st);
         }
         return new ArrayList<>(map.values());
     }
